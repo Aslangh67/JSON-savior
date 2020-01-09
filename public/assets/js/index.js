@@ -22,9 +22,9 @@ app.get('/notes', (req, res) => {
 app.get("/api/notes", function (req, res) {
   return res.json(savedData);
 });
-// Create New Characters - takes in JSON input
+
 app.post("/api/notes", function (req, res) {
-  // This works because of our body parsing middleware
+  
 var newNote=req.body;
 newNote.id=1
 
@@ -34,10 +34,8 @@ res.json(true)
 
 });
 app.delete("/api/notes/1", function (req, res) {
-  // This works because of our body parsing middleware
-var oldNote=req.body;
-
-oldNote.val().empty()
+  
+savedData=[]
 
 
 res.json(true)
@@ -45,21 +43,6 @@ res.json(true)
 
 });
 
-// Create New Characters - takes in JSON input
-app.post("/api/tables", function (req, res) {
-  // req.body hosts is equal to the JSON post sent from the user
-  // This works because of our body parsing middleware
-  var newReservation = req.body;
-
-
-  if (tableData.length < 5) {
-      tableData.push(newReservation)
-      res.json(true)
-  } else {
-      waitData.push(newReservation)
-      res.json(false)
-  }
-});
 
 
 app.listen(PORT, function () {
