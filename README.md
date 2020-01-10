@@ -11,9 +11,12 @@
 * GET * - will return the index.html file
 
 
-
-
 * The application have a db.json file on the backend that will be used to store and retrieve notes using the fs module.
+
+## Dowanload:
+
+* To download and use this application, simply clone the repo and do "npm install" in command line. 
+* to run the program ,type "node server.js" in the command line
 
 
 ## The following API routes are created:
